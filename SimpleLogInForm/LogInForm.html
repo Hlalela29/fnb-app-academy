@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN FORM</title>
+</head>
+<body>
+    <style>
+        body
+        {
+            background-image: url("avengers_03.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+    <p><b>Welcome. Please log in</b></p>
+
+    <form>
+        <label for="usernameInput">Username:</label><input type="text" id="usernameInput"/><br/>
+        <label for="passwordInput">Password:</label><input type="password" id="passwordInput"/>
+
+        <p id="message"></p>
+        <br/><br/>
+        <a href= "#" onClick="verifyUser()">Log in</a>
+
+    </form>
+    
+    <script>
+        function verifyUser()
+        {
+            var username = document.getElementById("usernameInput").value;
+            var password = document.getElementById("passwordInput").value;
+
+            checkUserCreds(username, password);
+        }
+
+        function checkUserCreds(username, password)
+        {
+             var systemUserName = "Bond";
+             var systemPassword = "00?";
+
+             if(username  == systemUserName && password == systemPassword)
+             {
+                document.getElementById("message").innerHTML = "Correct. Logging you in....";
+             }
+             else
+             {
+                document.getElementById("message").innerHTML = "Incorrect. ERROR please type in the correct details....";
+             }
+        }
+        </script>
+</body>
+</html>
